@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de DOM</title>
+</head>
+<body>
+
+<h2>Lista de Compras</h2>
+
+<ul id="lista-compras">
+    <li>Maçãs</li>
+    <li>Bananas</li>
+    <li>Uvas</li>
+</ul>
+
+<input type="text" id="item" placeholder="Digite um item">
+<button id="adicionar">Adicionar Item</button>
+
+<script>
+    // Seleciona o input e o botão
+    const inputItem = document.getElementById('item');
+    const botaoAdicionar = document.getElementById('adicionar');
+    const listaCompras = document.getElementById('lista-compras');
+
+    // Adiciona um evento de clique ao botão
+    botaoAdicionar.addEventListener('click', function() {
+        // Obtém o valor do input
+        const novoItem = inputItem.value.trim();
+        
+        // Verifica se o campo não está vazio
+        if (novoItem !== '') {
+            // Cria um novo elemento li
+            const novoElemento = document.createElement('li');
+            novoElemento.textContent = novoItem;
+            
+            // Adiciona o novo item à lista
+            listaCompras.appendChild(novoElemento);
+            
+            // Limpa o campo de entrada
+            inputItem.value = '';
+        } else {
+            alert('Por favor, digite um item válido.');
+        }
+    });
+</script>
+
+
+<p>Exemplo 3 </p>
+
+<a href="../3/index.html"></a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de DOM</title>
+</head>
+<body>
+
+<p id="texto">Clique no botão para mudar este texto.</p>
+<button id="botao">Clique aqui</button>
+
+<script>
+    // Seleciona o parágrafo e o botão usando o ID
+    const paragrafo = document.getElementById('texto');
+    const botao = document.getElementById('botao');
+
+    // Adiciona um evento de clique ao botão
+    botao.addEventListener('click', function() {
+        // Muda o texto do parágrafo quando o botão é clicado
+        paragrafo.textContent = 'O texto foi alterado pelo JavaScript!';
+    });
+</script>
+
+
+<p>Exemplo 2</p>
+<a href="../2/index.html">VER</a>
+
+</body>
+</html>

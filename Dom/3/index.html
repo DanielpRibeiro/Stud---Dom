@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador com Mudança de Cor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        #container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        #contador {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: rgb(34, 34, 34);
+            font-weight: 900;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #contador.green {
+            color: green;
+        }
+
+        #contador.red {
+            color: red;
+        }
+        .container1{
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            border: 3px solid gray;
+            border-radius: 20px;
+            padding: 45px;
+        }
+        main{
+           padding: 50px;
+           justify-content: center;
+           align-items: center;
+           display: flex;
+           height: 80vh; 
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+
+    
+    <section class="container1">
+        <h2>Contador com Mudança de Cor</h2>
+
+        <div id="contador">0</div>
+        <button id="incrementar">Incrementar</button>
+        <button id="decrementar">Decrementar</button>
+        <button id="zerar">Zerar</button>
+    </section>
+
+</main>
+
+    <script>
+        const contadorElemento = document.getElementById('contador');
+        const incrementarBotao = document.getElementById('incrementar');
+        const decrementarBotao = document.getElementById('decrementar');
+        const zerarBotao = document.getElementById('zerar');
+
+        let contador = 0;
+
+        function atualizarCor() {
+            if (contador % 2 == 0) {
+                contadorElemento.style.color = 'green';
+            } else if (contador < 0) {
+                contadorElemento.style.color = 'red';
+            } else {
+                contadorElemento.style.color = 'blue';
+            }
+        }
+
+        function atualizarContador() {
+            contadorElemento.textContent = contador;
+            atualizarCor();
+        }
+
+        incrementarBotao.addEventListener('click', function () {
+            contador++;
+            atualizarContador();
+        });
+
+        decrementarBotao.addEventListener('click', function () {
+            contador--;
+            atualizarContador();
+        });
+
+        zerarBotao.addEventListener('click', function () {
+            contador = 0;
+            atualizarContador();
+        });
+    </script>
+
+</body>
+
+</html>
